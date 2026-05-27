@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cloud Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="sidebar">
+    <h2>Cloud Console</h2>
+    <ul>
+        <li onclick="showSection('storage')">Storage</li>
+        <li onclick="showSection('backup')">Backup</li>
+        <li onclick="showSection('versions')">Versions</li>
+        <li onclick="logout()">Logout</li>
+    </ul>
+</div>
+
+<div class="main-content">
+    <h1>Welcome to Secure Storage</h1>
+
+    <div id="storage" class="section">
+        <h2>Upload File to Main Bucket</h2>
+        <input type="file" id="fileInput">
+        <button onclick="uploadFile()">Upload</button>
+        <ul id="fileList"></ul>
+    </div>
+
+    <div id="backup" class="section" style="display:none;">
+        <h2>Backup Bucket Status</h2>
+        <p>All uploaded files are automatically replicated.</p>
+    </div>
+
+    <div id="versions" class="section" style="display:none;">
+        <h2>File Versions</h2>
+        <ul id="versionList"></ul>
+    </div>
+</div>
+
+<script src="https://sdk.amazonaws.com/js/aws-sdk-2.1481.0.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
